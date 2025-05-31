@@ -34,7 +34,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
             }
         } else {
             acc[date].temp_min = Math.min(acc[date].temp_min, forecast.main.temp_min);
-            acc[date].temp_max = Math.min(acc[date].temp_max, forecast.main.temp_max);
+            acc[date].temp_max = Math.max(acc[date].temp_max, forecast.main.temp_max);
         }
         return acc;
     }, {} as Record<string, DailyForcast>)
